@@ -1,0 +1,46 @@
+#include <iostream>
+#include <stdlib.h>
+#include <time.h>
+
+using namespace std;
+
+int main()
+{
+    int n, c=0, j, pc, pjogador, pcomputador;
+    cout << "Bem vindo ao jogo papel pedra tesoura" << endl;
+    cout << "Regras: voce deve inserir uma jogada de acordo com os numeros indicados, entao o computador ira realizar uma jogada" << endl << "voce pode acessar a pontuacao a qualquer momento de acordo com o comando especificado no codigo" << endl;
+    cout << "Insira a dificuldade que deseja jogar" << endl << "1.FACIL" << endl << "2.MEDIO" << endl << "3.DIFICIL" << endl;
+    cin >> n;
+    system("pause");
+    system("cls");
+
+    srand(time(NULL));
+
+    while (c != -1){
+        j=0;
+        cout << "O que deseja jogar?" << endl << "1.Papel" << endl << "2.Pedra" << endl << "3.Tesoura" << endl << "Se desejar consultar a pontuacao atual digite 4, e se desejar sair do jogo digite 5" << endl;
+        cin >> j;
+        pc = rand() %999;
+        if (j=4){
+            cout << "sua pontuacao: " << pjogador << endl << "pontuacao do computador: " << pcomputador << endl;
+        }
+        if (j=1 && pc <=333){
+            cout << "Empate!" << endl;
+            system("pause");
+            system("cls");
+        }
+        if (j=1 && pc>333 && pc<=666){
+            cout << "Voce Venceu!" << endl;
+            system("pause");
+            system("cls");
+            pjogador++;
+        }
+        if (j=1 && pc>666){
+            cout << "Voce Pedeu!" << endl;
+            system("pause");
+            system("cls");
+            pcomputador++;
+        }
+    }
+    return 0;
+}
